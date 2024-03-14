@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+    stages {
+        stage('dev') {
+            when {
+                branch 'dev'
+            }
+            steps {
+                echo 'Uploading image on Dev registry.'
+            }
+        }
+        stage('QA') {
+            when {
+                branch 'QA'
+            }
+            steps {
+                echo 'Uploading image on Dev registry.'
+            }
+        }
+    }
+}
